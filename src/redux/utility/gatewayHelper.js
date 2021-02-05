@@ -8,7 +8,6 @@ const headers = {
 };
 
 async function http(method, endpoint) {
-  console.log(`${BASE_URL}haha`);
   let response = null;
 
   if (method.toUpperCase() === 'GET') {
