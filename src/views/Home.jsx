@@ -120,43 +120,43 @@ const Home = () => {
             </ResultCategoryLink>
           </ResultCategory>
           <div>
-            { loadingMovieByTitle && 'loading'}
-            { errorMovieByTitle !== null && title.length <= 0
+            {loadingMovieByTitle && 'loading'}
+            {errorMovieByTitle !== null && title.length <= 0
               && 'Please type word to search!'}
             {
               errorMovieByTitle !== null && title.length > 0 && errorMovieByTitle.message
             }
             {
               errorMovieByTitle === null && !loadingMovieByTitle && (
-              <>
-                {listMovieByTitle.titles.length <= 0
-                  && <h5>No Movie Found!</h5>}
-                {listMovieByTitle.titles.length > 0 && (
-                  <>
-                    <TitleResultCategory>Titles</TitleResultCategory>
-                    <TableSearchResult>
-                      <tbody>
-                        {listMovieByTitle.titles.map((item) => (
-                          <tr key={item.id}>
-                            <td width="30">
-                              <MovieImage src={item.image} alt="tes" />
-                            </td>
-                            <td className="px-2">
-                              <ResultCategoryLink to={{
-                                pathname: '/detail-movie',
-                                movieID: item.id,
-                              }}
-                              >
-                                {item.title}
-                              </ResultCategoryLink>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </TableSearchResult>
-                  </>
-                )}
-              </>
+                <>
+                  {listMovieByTitle.titles.length <= 0
+                    && <h5>No Movie Found!</h5>}
+                  {listMovieByTitle.titles.length > 0 && (
+                    <>
+                      <TitleResultCategory>Titles</TitleResultCategory>
+                      <TableSearchResult>
+                        <tbody>
+                          {listMovieByTitle.titles.map((item) => (
+                            <tr key={item.id}>
+                              <td width="30">
+                                <MovieImage src={item.image} alt="tes" />
+                              </td>
+                              <td className="px-2">
+                                <ResultCategoryLink to={{
+                                  pathname: '/detail-movie',
+                                  movieID: `?${item.id}`,
+                                }}
+                                >
+                                  {item.title}
+                                </ResultCategoryLink>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </TableSearchResult>
+                    </>
+                  )}
+                </>
               )
             }
           </div>

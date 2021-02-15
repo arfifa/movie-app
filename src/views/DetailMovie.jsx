@@ -27,12 +27,12 @@ const BannerContainer = styled.div`
 `;
 
 const DetailMenu = styled.div`
-	color:#C0C0C0;
+  color:#C0C0C0;
   font-size: 16px;
   font-weight: 400;
   padding-left: 10px;
   padding-right: 10px;
-	height: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -139,83 +139,83 @@ const DetailMovie = () => {
   return (
     <Container>
       <DetailMovieWrapper>
-        { loadingMovieDetail && 'loading'}
+        {loadingMovieDetail && 'loading'}
         {errorMovieDetail !== null && errorMovieDetail.message}
         {errorMovieDetail === null && !loadingMovieDetail && (
-        <>
-          <BannerContainer>
-            <DetailMenu>
-              <div>
-                <DetailMenuLink to="#">
-                  FULL CAST AND CREW
-                </DetailMenuLink>
-                {'  |  '}
-                <DetailMenuLink to="#">
-                  TRIVIA
-                </DetailMenuLink>
-                {'  |  '}
-                <DetailMenuLink to="#">
-                  USER REVIEWS
-                </DetailMenuLink>
-                {'  |  '}
-                <DetailMenuLink to="#">
-                  IMDbPro
-                </DetailMenuLink>
-                {'  |  '}
-                <DetailMenuLink to="#">
-                  MORE
-                </DetailMenuLink>
-              </div>
-              <div>
-                <DetailMenuLink to="#">
-                  SHARE
-                </DetailMenuLink>
-              </div>
-            </DetailMenu>
-            <TitleWrapper>
-              <div className="d-flex">
-                <IconWatchList size={40} />
+          <>
+            <BannerContainer>
+              <DetailMenu>
                 <div>
-                  <MovieTitle>
-                    {movieDetail.title}
-                    <MovieYear>{`(${movieDetail.year})`}</MovieYear>
-                  </MovieTitle>
-                  <div style={{ color: '#C0C0C0' }}>
-                    <MovieBriefLink to="#">
-                      D
+                  <DetailMenuLink to="#">
+                    FULL CAST AND CREW
+                </DetailMenuLink>
+                  {'  |  '}
+                  <DetailMenuLink to="#">
+                    TRIVIA
+                </DetailMenuLink>
+                  {'  |  '}
+                  <DetailMenuLink to="#">
+                    USER REVIEWS
+                </DetailMenuLink>
+                  {'  |  '}
+                  <DetailMenuLink to="#">
+                    IMDbPro
+                </DetailMenuLink>
+                  {'  |  '}
+                  <DetailMenuLink to="#">
+                    MORE
+                </DetailMenuLink>
+                </div>
+                <div>
+                  <DetailMenuLink to="#">
+                    SHARE
+                </DetailMenuLink>
+                </div>
+              </DetailMenu>
+              <TitleWrapper>
+                <div className="d-flex">
+                  <IconWatchList size={40} />
+                  <div>
+                    <MovieTitle>
+                      {movieDetail.title}
+                      <MovieYear>{`(${movieDetail.year})`}</MovieYear>
+                    </MovieTitle>
+                    <div style={{ color: '#C0C0C0' }}>
+                      <MovieBriefLink to="#">
+                        D
                     </MovieBriefLink>
-                    {'  |  '}
-                    <MovieBriefLink to="#">
-                      {movieDetail.length}
+                      {'  |  '}
+                      <MovieBriefLink to="#">
+                        {movieDetail.length}
+                      </MovieBriefLink>
+                      {'  |  '}
+                      <MovieBriefLink to="#">
+                        Drama, Romance
                     </MovieBriefLink>
-                    {'  |  '}
-                    <MovieBriefLink to="#">
-                      Drama, Romance
+                      {'  |  '}
+                      <MovieBriefLink to="#">
+                        30 January 2009 (USA)
                     </MovieBriefLink>
-                    {'  |  '}
-                    <MovieBriefLink to="#">
-                      30 January 2009 (USA)
-                    </MovieBriefLink>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <ContainerRating>
-                <Rating>
-                  {movieDetail.rating}
-                  <span style={{ fontSize: 11 }}>/10</span>
-                </Rating>
-                <RatingVotes>{movieDetail.rating_votes}</RatingVotes>
-              </ContainerRating>
-            </TitleWrapper>
-            <PosterWrapper>
-              <ImagePoster src={movieDetail.poster} alt="image poster movie" />
-              <TrailerWrapper />
-            </PosterWrapper>
-          </BannerContainer>
-          <DescriptionContainer>
-            <p>{movieDetail.plot}</p>
-          </DescriptionContainer>
-        </>
+                <ContainerRating>
+                  <Rating>
+                    {movieDetail.rating}
+                    <span style={{ fontSize: 11 }}>/10</span>
+                  </Rating>
+                  <RatingVotes>{movieDetail.rating_votes}</RatingVotes>
+                </ContainerRating>
+              </TitleWrapper>
+              <PosterWrapper>
+                <ImagePoster src={movieDetail.poster} alt="image poster movie" />
+                <TrailerWrapper />
+              </PosterWrapper>
+            </BannerContainer>
+            <DescriptionContainer>
+              <p>{movieDetail.plot}</p>
+            </DescriptionContainer>
+          </>
         )}
       </DetailMovieWrapper>
       <NewsUpdateWrapper>
