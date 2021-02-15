@@ -11,7 +11,7 @@ const AppRouter = () => (
     <Header />
     <Switch>
       <Route path="/" component={Home} exact />
-      <Route path="/detail-movie" component={DetailMovie} />
+      <Route path="/detail-movie/:movieID" component={DetailMovie} />
     </Switch>
   </Router>
 );

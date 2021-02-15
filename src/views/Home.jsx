@@ -143,8 +143,7 @@ const Home = () => {
                               </td>
                               <td className="px-2">
                                 <ResultCategoryLink to={{
-                                  pathname: '/detail-movie',
-                                  movieID: `?${item.id}`,
+                                  pathname: `/detail-movie/${item.id}`,
                                 }}
                                 >
                                   {item.title}

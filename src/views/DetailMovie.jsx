@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import * as Icon from 'react-feather';
-import { useHistory, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -123,9 +123,9 @@ const NewsUpdateWrapper = styled.div`
 `;
 
 const DetailMovie = () => {
-  const history = useHistory();
+  const param = useParams();
   const dispatch = useDispatch();
-  const { movieID } = history.location;
+  const { movieID } = param;
 
   const movieDetailData = useSelector((state) => state.movie);
   const {
@@ -148,28 +148,28 @@ const DetailMovie = () => {
                 <div>
                   <DetailMenuLink to="#">
                     FULL CAST AND CREW
-                </DetailMenuLink>
+                  </DetailMenuLink>
                   {'  |  '}
                   <DetailMenuLink to="#">
                     TRIVIA
-                </DetailMenuLink>
+                  </DetailMenuLink>
                   {'  |  '}
                   <DetailMenuLink to="#">
                     USER REVIEWS
-                </DetailMenuLink>
+                  </DetailMenuLink>
                   {'  |  '}
                   <DetailMenuLink to="#">
                     IMDbPro
-                </DetailMenuLink>
+                  </DetailMenuLink>
                   {'  |  '}
                   <DetailMenuLink to="#">
                     MORE
-                </DetailMenuLink>
+                  </DetailMenuLink>
                 </div>
                 <div>
                   <DetailMenuLink to="#">
                     SHARE
-                </DetailMenuLink>
+                  </DetailMenuLink>
                 </div>
               </DetailMenu>
               <TitleWrapper>
@@ -183,7 +183,7 @@ const DetailMovie = () => {
                     <div style={{ color: '#C0C0C0' }}>
                       <MovieBriefLink to="#">
                         D
-                    </MovieBriefLink>
+                      </MovieBriefLink>
                       {'  |  '}
                       <MovieBriefLink to="#">
                         {movieDetail.length}
@@ -191,11 +191,11 @@ const DetailMovie = () => {
                       {'  |  '}
                       <MovieBriefLink to="#">
                         Drama, Romance
-                    </MovieBriefLink>
+                      </MovieBriefLink>
                       {'  |  '}
                       <MovieBriefLink to="#">
                         30 January 2009 (USA)
-                    </MovieBriefLink>
+                      </MovieBriefLink>
                     </div>
                   </div>
                 </div>
